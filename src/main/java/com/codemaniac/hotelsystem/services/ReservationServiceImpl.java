@@ -7,12 +7,14 @@ import com.codemaniac.hotelsystem.entities.Room;
 import com.codemaniac.hotelsystem.repository.ReservationRepository;
 import com.codemaniac.hotelsystem.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class ReservationServiceImpl implements ReservationService {
 
     @Autowired
@@ -119,5 +121,5 @@ public class ReservationServiceImpl implements ReservationService {
         return availableRooms;
     }
 
-    
+
 }
