@@ -5,16 +5,11 @@ import lombok.Data;
 import javax.persistence.*;
 
 
-@Entity
-@Table(name = "rates")
+
 @Data
 public class Rate {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long rateId;
 
-    @ManyToOne
-    @JoinColumn(name = "room_type_room_type")
+    private Long rateId;
     private RoomType roomType;
     private double ratePerNight;
     private double extraPersonCharge;

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.codemaniac.hotelsystem">
+    <class name="Rate" table="rates">
+        <id name="rateId" type="long" column="rate_id">
+            <generator class="identity" />
+        </id>
+        <many-to-one name="roomType" class="RoomType" cascade="save-update">
+            <column name="room_type_room_type"/>
+        </many-to-one>
+        <property name="ratePerNight" type="double" column="rate_per_night" />
+        <property name="extraPersonCharge" type="double" column="extra_person_charge" />
+    </class>
+</hibernate-mapping>

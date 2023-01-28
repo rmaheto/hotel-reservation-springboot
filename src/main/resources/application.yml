@@ -1,15 +1,23 @@
 spring:
   application:
     name: hotel-reservation
-  config:
-    additional-location: file:\keys\
   datasource:
     url: "jdbc:mysql://localhost:3306/hotel"
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: ea
     password: cs544
   jpa:
-    hibernate.ddl-auto: update
+    hibernate:
+      ddl-auto: validate
+    mapping-resources:
+      - hibernate/guest.hbm.xml
+      - hibernate/amenities.hbm.xml
+      - hibernate/payment.hbm.xml
+      - hibernate/rate.hbm.xml
+      - hibernate/room.hbm.xml
+      - hibernate/roomtype.hbm.xml
+      - hibernate/reservation.hbm.xml
+      - hibernate/staff.hbm.xml
     generate-ddl: true
     show-sql: true
     properties:

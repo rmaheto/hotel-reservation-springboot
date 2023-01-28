@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.codemaniac.hotelsystem">
+    <class name="Reservation" table="reservations">
+        <id name="reservationId" type="java.lang.Long">
+            <column name="reservation_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="guest" column="guest_id" class="Guest" cascade="save-update"/>
+        <many-to-one name="room" column="room_number" class="Room" cascade="save-update"/>
+        <property name="checkInDate" type="java.time.LocalDate" column="check_in_date" />
+        <property name="checkOutDate" type="java.time.LocalDate" column="check_out_date" />
+        <property name="numOfNights" type="long" column="num_of_nights" />
+        <property name="rate" type="double" column="rate" />
+        <property name="totalCost" type="double" column="total_cost" />
+    </class>
+</hibernate-mapping>
